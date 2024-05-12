@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+    outline: none;
+
+
+}
+
+body {
+
+    background-color: #772FD3;
+
+}
+
+.logo-gif {
+
+    Width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+
+
+main {
+
+    width: 375px;
+    background: #f4f4f4;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 44px 24px 23px;
+}
+
+
+label {
+
+    color: #777777;
+    Weight: 400px;
+    Size: 14px;
+
+}
+
+
+select,
+input {
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    height: 48px;
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #555555;
+    padding-left: 18px;
+
+
+}
+
+
+button {
+    background-color: #772FD3;
+    width: 100%;
+    border-radius: 5px;
+    height: 48px;
+    Weight: 700px;
+    Size: 18px;
+    color: #FFFFFF;
+    border: none;
+ }
+
+
+ button:hover {
+
+opacity: 0.8;
+
+ }
+
+ button:active {
+
+
+    opacity: 0.6;
+ }
+
+section {
+    border: 1px solid #772FD3;
+border-radius: 20px;
+margin-top: 36px;
+padding: 12px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+
+.currency-box {
+    display: flex;
+ flex-direction: column;
+align-items: center;
+gap: 4px;
+}
+
+.flecha {
+margin: 15px 0;
+}
+
+.currency {
+    Size: 14px;
+    color: #777777;
+
+}
+
+.currency-value, .currency-value-to-converted {
+    font-size: 20px;
+    font-weight: 700;
+    color: #555555;
+}
+
+
+
