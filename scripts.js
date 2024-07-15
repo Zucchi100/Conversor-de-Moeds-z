@@ -1,18 +1,27 @@
 const convertbutton = document.querySelector(".convert-button")
 const currencyselect = document.querySelector(".currency-select")
 
-function convertvalues() {
 
-    const inputcurrencyvalue = document.querySelector(".input-currency").value
-    const currencyValueToConvert = document.querySelector(".currency-value-to-converted")
-    const currencyValueConvert = document.querySelector(".currency-value")
 
+async function convertvalues() {
+
+    const inputcurrencyvalue = document.querySelector(".input-currency").value;
+    const currencyValueToConvert = document.querySelector(".currency-value-to-converted");
+    const currencyValueConvert = document.querySelector(".currency-value");
+    
+
+const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
+    
+    console.log (data)
+    
     console.log(currencyselect.value)
 
     const dolar = 5.2
     const eurotoday = 6.2
     const libratoday = 5.3
     const Bitcointoday = 5.0
+
+
 
     if (currencyselect.value == "dolar") {
 
@@ -27,7 +36,7 @@ function convertvalues() {
     if (currencyselect.value == "euro") {
         currencyValueConvert.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
-    currency: "EUR"
+            currency: "EUR"
         }).format(inputcurrencyvalue / eurotoday)
 
     }
@@ -47,57 +56,57 @@ function convertvalues() {
 
     }
 
-if (currencyselect.value == "bitcoin") {
-    currencyValueConvert.innerHTML = new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "BTC"
-    }).format(inputcurrencyvalue / Bitcointoday)
+    if (currencyselect.value == "bitcoin") {
+        currencyValueConvert.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "BTC"
+        }).format(inputcurrencyvalue / Bitcointoday)
+
+    }
+
 
 }
 
-
-}
-
-function changecurrency () {
+function changecurrency() {
 
 
 
-const currencyName = document.getElementById ("currency-name")
-const currencyImage = document.querySelector (".currency-img")
+    const currencyName = document.getElementById("currency-name")
+    const currencyImage = document.querySelector(".currency-img")
 
 
 
 
-if (currencyselect.value == "dolar") {
-currencyName.innerHTML = "Dólar americano"
-currencyImage.src = "./assets/estados-unidos (1) 1.png"
-}
+    if (currencyselect.value == "dolar") {
+        currencyName.innerHTML = "Dólar americano"
+        currencyImage.src = "./assets/estados-unidos (1) 1.png"
+    }
 
-if (currencyselect.value == "euro") {
-    currencyName.innerHTML = "Euro"
-    currencyImage.src = "./assets/Design sem nome 3.png"
+    if (currencyselect.value == "euro") {
+        currencyName.innerHTML = "Euro"
+        currencyImage.src = "./assets/Design sem nome 3.png"
 
-}
+    }
 
-if (currencyselect.value == "libra") {
-    currencyName.innerHTML = "Libra"
-    currencyImage.src = "./assets/libra 1.png"
-}
+    if (currencyselect.value == "libra") {
+        currencyName.innerHTML = "Libra"
+        currencyImage.src = "./assets/libra 1.png"
+    }
 
-if (currencyselect.value == "bitcoin") {
-    currencyName.innerHTML = "Bitcoin"
-    currencyImage.src = "./assets/bitcoin 1.png"
+    if (currencyselect.value == "bitcoin") {
+        currencyName.innerHTML = "Bitcoin"
+        currencyImage.src = "./assets/bitcoin 1.png"
 
-}
-
-
+    }
 
 
-convertvalues()
+
+
+    convertvalues()
 }
 
 
-currencyselect.addEventListener ("change", changecurrency)
+currencyselect.addEventListener("change", changecurrency)
 convertbutton.addEventListener("click", convertvalues)
 
 
